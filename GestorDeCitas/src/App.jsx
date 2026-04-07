@@ -34,9 +34,8 @@ function App() {
 
   return (
     <>
-      <Titulo texto="Administrador de Pacientes" />
-
-      <Layout izquierda={<CampoFormulario/>} derecha={<ListadoCitas citas={citas} />}/>
+      <Titulo/>
+      <Layout citas={citas}/>
     </>
   );
 }

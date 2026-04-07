@@ -9,7 +9,6 @@ function Cita({ cita }) {
       <p>Fecha: <span>{cita.fecha}</span></p>
       <p>Hora: <span>{cita.hora}</span></p>
       <p>Sintomas: <span>{cita.sintomas}</span></p>
-
       <Boton/>
     </div>
   );

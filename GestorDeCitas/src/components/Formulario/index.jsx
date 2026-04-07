@@ -14,7 +14,7 @@ function Formulario() {
 
       <label>Sintomas</label><textarea name="sintomas" class="u-full-width"></textarea>
 
-        <BotonCita/>
+        <BotonDeCita/>
       </form>
     </>
   );

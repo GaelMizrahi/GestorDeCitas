@@ -12,7 +12,7 @@ function Layout({ citas }) {
         </div>
 
         <div class="one-half column">
-          <Listado citas={citas} />
+          <ListadoCitas citas={citas} />
         </div>
 
       </div>
