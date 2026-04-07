@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Titulo from "./components/Titulo";
 import Layout from "./components/Layout";
-import FormularioCita from "./components/FormularioCita";
+import CampoFormulario from "./components/CampoFormulario";
 import ListadoCitas from "./components/ListadoCitas";
 
 function App() {
@@ -36,10 +36,7 @@ function App() {
     <>
       <Titulo texto="Administrador de Pacientes" />
 
-      <Layout
-        izquierda={<FormularioCita />}
-        derecha={<ListadoCitas citas={citas} />}
-      />
+      <Layout izquierda={<CampoFormulario/>} derecha={<ListadoCitas citas={citas} />}/>
     </>
   );
 }
