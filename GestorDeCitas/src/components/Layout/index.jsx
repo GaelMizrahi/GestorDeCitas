@@ -1,20 +1,18 @@
 import Formulario from "../Formulario";
 import ListadoCitas from "../ListadoCitas";
-import "./Layout.css"
+import "./Layout.css";
 
-function Layout({ citas }) {
+function Layout({ citas, setCitas }) {
   return (
-    <div class ="container">
-      <div class ="row">
-        
-        <div class ="one-half column">
-          <Formulario />
+    <div className="container">
+      <div className="row">
+        <div className="one-half column">
+          <Formulario citas={citas} setCitas={setCitas} />
         </div>
 
-        <div class="one-half column">
-          <ListadoCitas citas={citas} />
+        <div className="one-half column">
+          <ListadoCitas citas={citas} setCitas={setCitas} />
         </div>
-
       </div>
     </div>
   );

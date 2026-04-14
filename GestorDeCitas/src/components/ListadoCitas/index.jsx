@@ -1,18 +1,26 @@
-import Boton from "../Boton";
-import "./Cita.css"
+import Cita from "../Cita";
+import SinCitas from "../SinCitas";
+import "./ListadoCitas.css";
 
-function ListadoCitas({ cita }) {
+function ListadoCitas({ citas, setCitas }) {
+  if (citas.length === 0) {
+    return <SinCitas />;
+  }
+
   return (
-    <div class="cita">
-      <p>Mascota: <span>{cita.mascota}</span></p>
-      <p>Dueño: <span>{cita.dueño}</span></p>
-      <p>Fecha: <span>{cita.fecha}</span></p>
-      <p>Hora: <span>{cita.hora}</span></p>
-      <p>Sintomas: <span>{cita.sintomas}</span></p>
+    <>
+      <h2>Administra tus citas</h2>
 
-      <Boton/>
-    </div>
+      {citas.map((cita) => (
+        <Cita
+          key={cita.id}
+          cita={cita}
+          citas={citas}
+          setCitas={setCitas}
+        />
+      ))}
+    </>
   );
 }
 
-export default Cita;
+export default ListadoCitas;

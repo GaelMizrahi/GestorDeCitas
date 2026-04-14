@@ -1,15 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Titulo from "./components/Titulo";
 import Layout from "./components/Layout";
-import CampoFormulario from "./components/CampoFormulario";
-import ListadoCitas from "./components/ListadoCitas";
 
 function App() {
-  const [citas] = useState([
+  const [citas, setCitas] = useState([
     {
       id: 1,
       mascota: "Nina",
-      propietario: "Martin",
+      dueño: "Martin",
       fecha: "2021-08-05",
       hora: "08:20",
       sintomas: "Le duele la pierna",
@@ -17,7 +15,7 @@ function App() {
     {
       id: 2,
       mascota: "Sifon",
-      propietario: "Flecha",
+      dueño: "Flecha",
       fecha: "2023-08-05",
       hora: "09:24",
       sintomas: "Duerme mucho",
@@ -25,19 +23,21 @@ function App() {
     {
       id: 3,
       mascota: "Floki",
-      propietario: "Ari",
+      dueño: "Ari",
       fecha: "2023-08-05",
       hora: "16:15",
       sintomas: "No está comiendo",
     },
   ]);
 
+  useEffect(() => {}, [citas]);
+
   return (
     <>
-      <Titulo/>
-      <Layout citas={citas}/>
+      <Titulo />
+      <Layout citas={citas} setCitas={setCitas} />
     </>
   );
 }
 
-export default App
+export default App;
