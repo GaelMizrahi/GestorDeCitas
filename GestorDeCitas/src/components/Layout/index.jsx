@@ -1,18 +1,22 @@
 import Formulario from "../Formulario";
 import ListadoCitas from "../ListadoCitas";
-import "./Layout.css";
+<ListadoCitas citas={citas} onEliminarCita={onEliminarCita} />
 
-function Layout({ citas, setCitas }) {
+import "./Layout.css"
+
+function Layout({ citas, onAgregarCita, onEliminarCita }) {
   return (
-    <div className="container">
-      <div className="row">
-        <div className="one-half column">
-          <Formulario citas={citas} setCitas={setCitas} />
+    <div class ="container">
+      <div class ="row">
+        
+        <div class ="one-half column">
+          <Formulario onAgregarCita={onAgregarCita} />
         </div>
 
-        <div className="one-half column">
-          <ListadoCitas citas={citas} setCitas={setCitas} />
+        <div class="one-half column">
+          <Listado citas={citas} onEliminarCita={onEliminarCita} />
         </div>
+
       </div>
     </div>
   );
