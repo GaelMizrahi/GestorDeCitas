@@ -12,12 +12,8 @@ function Layout({ citas, agregarCita, eliminarCita }) {
         </div>
 
         <div className="one-half column">
-          <ListadoCitas
-            citas={citas}
-            eliminarCita={eliminarCita}
-          />
+          <ListadoCitas citas={citas} eliminarCita={eliminarCita}/>
         </div>
-
       </div>
     </div>
   );

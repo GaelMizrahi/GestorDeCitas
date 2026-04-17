@@ -13,9 +13,9 @@ function Formulario({ agregarCita }) {
     e.preventDefault();
 
     const nuevaCita = {
-      id: Date.now(),
+      id: Date.now(),//le asignamos un valor unico
       mascota,
-      dueño: dueño,
+      dueño,
       fecha,
       hora,
       sintomas,
@@ -32,7 +32,7 @@ function Formulario({ agregarCita }) {
 
   return (
     <>
-      <h2>Crear mi Cita</h2>
+      <h2>Crear mi cita</h2>
 
       <form onSubmit={funcionBotonSubmit}>
         <label>Nombre Mascota</label>
@@ -74,14 +74,8 @@ function Formulario({ agregarCita }) {
         />
 
         <label>Sintomas</label>
-        <textarea
-          name="sintomas"
-          className="u-full-width"
-          value={sintomas}
-          onChange={(e) => setSintomas(e.target.value)}
-        ></textarea>
-
-        <BotonDeCita />
+        <textarea name="sintomas" className="u-full-width" value={sintomas} onChange={(e) => setSintomas(e.target.value)}></textarea>
+        <BotonDeCita/>
       </form>
     </>
   );

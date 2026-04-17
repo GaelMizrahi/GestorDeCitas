@@ -1,4 +1,5 @@
 import Cita from "../Cita";
+import SinCitas from "../SinCitas";
 
 function ListadoCitas({ citas, eliminarCita }) {
   return (
@@ -6,15 +7,11 @@ function ListadoCitas({ citas, eliminarCita }) {
       <h2>Administra tus citas</h2>
 
       <div className="lista-citas">
-        {citas.length === 0 ? (
-          <p>No hay citas</p>
+        {citas.length == 0 ? (
+          <SinCitas/>
         ) : (
           citas.map((cita) => (
-            <Cita
-              key={cita.id}
-              cita={cita}
-              eliminarCita={eliminarCita}
-            />
+            <Cita key={cita.id} cita={cita} eliminarCita={eliminarCita}/>
           ))
         )}
       </div>
