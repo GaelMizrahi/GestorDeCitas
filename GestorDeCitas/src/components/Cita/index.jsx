@@ -1,11 +1,10 @@
 import "./Cita.css";
 
-function Cita({ cita, onEliminarCita }) {
-  const handleEliminar = () => {
+function Cita({ cita, eliminarCita }) {
+  const confirmarEliminar = () => {
     const confirmar = window.confirm("¿Eliminar esta cita?");
-
     if (confirmar) {
-      onEliminarCita(cita.id);
+      eliminarCita(cita.id);
     }
   };
 
@@ -27,13 +26,7 @@ function Cita({ cita, onEliminarCita }) {
         Sintomas: <span>{cita.sintomas}</span>
       </p>
 
-      <button
-        type="button"
-        className="button eliminar u-full-width"
-        onClick={handleEliminar}
-      >
-        Eliminar ×
-      </button>
+      <button type="button" className="button elimnar u-full-width" onClick={confirmarEliminar}>Eliminar ×</button>
     </div>
   );
 }

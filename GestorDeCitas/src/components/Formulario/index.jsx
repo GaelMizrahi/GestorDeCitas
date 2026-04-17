@@ -2,29 +2,29 @@ import { useState } from "react";
 import BotonDeCita from "../BotonDeCita";
 import "./Formulario.css";
 
-function Formulario({ onAgregarCita }) {
+function Formulario({ agregarCita }) {
   const [mascota, setMascota] = useState("");
-  const [dueno, setDueno] = useState("");
+  const [dueño, setDueño] = useState("");
   const [fecha, setFecha] = useState("");
   const [hora, setHora] = useState("");
   const [sintomas, setSintomas] = useState("");
 
-  const handleSubmit = (e) => {
+  const funcionBotonSubmit = (e) => {
     e.preventDefault();
 
-    const nueva = {
+    const nuevaCita = {
       id: Date.now(),
       mascota,
-      dueño: dueno,
+      dueño: dueño,
       fecha,
       hora,
       sintomas,
     };
 
-    onAgregarCita(nueva);
+    agregarCita(nuevaCita);
 
     setMascota("");
-    setDueno("");
+    setDueño("");
     setFecha("");
     setHora("");
     setSintomas("");
@@ -34,7 +34,7 @@ function Formulario({ onAgregarCita }) {
     <>
       <h2>Crear mi Cita</h2>
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={funcionBotonSubmit}>
         <label>Nombre Mascota</label>
         <input
           type="text"
@@ -48,11 +48,11 @@ function Formulario({ onAgregarCita }) {
         <label>Nombre Dueño</label>
         <input
           type="text"
-          name="dueno"
+          name="dueño"
           className="u-full-width"
           placeholder="Nombre dueño de la mascota"
-          value={dueno}
-          onChange={(e) => setDueno(e.target.value)}
+          value={dueño}
+          onChange={(e) => setDueño(e.target.value)}
         />
 
         <label>Fecha</label>

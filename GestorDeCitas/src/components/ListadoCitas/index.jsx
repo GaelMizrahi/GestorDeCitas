@@ -1,15 +1,23 @@
 import Cita from "../Cita";
 
-function ListadoCitas({ citas, onEliminarCita }) {
+function ListadoCitas({ citas, eliminarCita }) {
   return (
     <>
-      {citas.map((cita) => (
-        <Cita
-          key={cita.id}
-          cita={cita}
-          onEliminarCita={onEliminarCita}
-        />
-      ))}
+      <h2>Administra tus citas</h2>
+
+      <div className="lista-citas">
+        {citas.length === 0 ? (
+          <p>No hay citas</p>
+        ) : (
+          citas.map((cita) => (
+            <Cita
+              key={cita.id}
+              cita={cita}
+              eliminarCita={eliminarCita}
+            />
+          ))
+        )}
+      </div>
     </>
   );
 }
